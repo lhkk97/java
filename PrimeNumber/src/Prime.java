@@ -8,4 +8,6 @@ public class Prime {
 		}
 		System.out.println("гу╟Х: "+total);
 	}	
+	
+	
 }
