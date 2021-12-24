@@ -7,7 +7,7 @@
 <title>Person Information</title>
 </head>
 <body>
-<form method="GET" action="personServlet">
+<form method="POST" action="personServlet">
 <table>
 <tr><td>이름</td><td><input type=text name=name id=name></td></tr>
 <tr><td>생년월일</td><td><input type=date name=birthday id=birthday></td></tr>

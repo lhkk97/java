@@ -28,8 +28,7 @@ public class opServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request,response);
 	}
 
 	/**
@@ -42,20 +41,20 @@ public class opServlet extends HttpServlet {
 		int value2=Integer.parseInt(req.getParameter("value2"));
 	    String operator=req.getParameter("operator");
 		
-	    int n;
+	    int n=0;
 		if(operator.equals("+")) {
 	    	n=value1+value2;
 	    } else if(operator.equals("-") ) {
 	    	n=value1-value2;
 	    } else if(operator.equals("*")) {
 	    	n=value1*value2;
-	    } else {
+	    } else if(operator.equals("/")) {
 	    	n=value1/value2;
-	    }
+	    } else return;
 		
 		String outstr="<html><head><title>operator</title></head></body>";
 		outstr+="value1 : "+value1+"<br>"+"value2 : "+value2+"<br>";
-		outstr+="operator : "+value1+operator+value2+"<br>"+"result : "+n;
+		outstr+="operator : "+operator+"<br>"+"result : "+n;
 		outstr+="</body></html>";
 		
 		PrintWriter out=response.getWriter();
