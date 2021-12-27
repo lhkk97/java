@@ -4,14 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Insert title here</title>
 </head>
 <body>
-<table>
-<tr>
-<td><a href="login.jsp">로그인</a></td>
-<td><a href="register.jsp">회원가입</a></td>
-</tr>
-</table>
+<% request.removeAttribute("userid"); %>
 </body>
 </html>

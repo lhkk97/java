@@ -11,11 +11,10 @@
 <table>
 <tr><td>아이디</td><td><input type=text name=userid>
 <tr><td>비밀번호</td><td><input type=text name=passcode></td></tr>
-<tr><td colspan=2><input type=submit value="로그인">&nbsp;
-				<input type=reset value="비우기">&nbsp;
-				<input type=submit value="취소">
+<tr><td colspan=2><input type=submit id=login value="로그인">&nbsp;
+				<input type=reset onclick="location.href='home.jsp'" id=cancel value="취소">
 </td></tr>
-<tr><td colspan=3 align=right><input type=text name=join></td></tr>
+<tr><td colspan=2 align=right><a href='register.jsp'>회원가입</a>
 </table>
 </form>
 </body>

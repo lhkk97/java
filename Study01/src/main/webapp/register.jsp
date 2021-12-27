@@ -11,7 +11,7 @@
 	td {border:1px solid skyblue;}
 </style>
 <body>
-<form method="POST" action="validate.jsp">
+<form method="POST" action="register_check.jsp">
 <table>
 <tr>
 	<td align=center>실명</td><td><input type=text name=name id=name></td>
@@ -37,7 +37,7 @@
 </tr>
 <tr><td colspan=5 align=center>
 	<input type=submit id=done value="가입완료">&nbsp;&nbsp;
-	<input type=submit id=cancel value="취소">
+	<input type=reset onclick="location.href='home.jsp'" id=cancel value="취소">
 </td></tr>
 </table>
 </form>
@@ -45,18 +45,42 @@
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
 $(document)
-.on('#done',function() {
-	if($('#pw_check').val()=='') {
-		alert('false');
+//$('.content').click(function(){});
+.on('click','#done', function() {
+	if($('#name').val()=='') {
+		alert('이름을 입력하세요.');
 		return false;
 	}
-	else {
-		alert('true');
-		return true;
+	if($('#userid').val()=='') {
+		alert('아이디를 입력하세요.');
+		return false;
 	}
-})
-.on('#cancle',function() {
-	document.location='login.jsp'
+	if($('#passcode').val()=='') {
+		alert('비밀번호를 입력하세요.');
+		return false;
+	}
+	if($('#pw_check').val()=='') {
+		alert('비밀번호확인을 입력하세요.');
+		return false;
+	}
+	if($('#passcode').val()!=$('#pw_check').val()) {
+		alert('비밀번호와 비밀번호확인이 다릅니다.');
+		return false;
+	}
+	if($('#mobile').val()=='') {
+		alert('모바일을 입력하세요.');
+		return false;
+	}
+	
+	if($('input[name=gender]:checked').length==0) {
+		alert('성별을 입력하세요.');	
+		return false;
+	}
+	if($('input[name=interest]:checked').length==0) {
+		alert('관심분야를 체크하세요.');
+		return false;
+	}
+
 })
 </script>
 </html>
