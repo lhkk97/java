@@ -45,7 +45,6 @@
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
 $(document)
-//$('.content').click(function(){});
 .on('click','#done', function() {
 	if($('#name').val()=='') {
 		alert('이름을 입력하세요.');
