@@ -12,7 +12,7 @@
 </style>
 <body>
 <form method="POST" action="register_check.jsp">
-<table>
+<table align=center  valign=middle>
 <tr>
 	<td align=center>실명</td><td><input type=text name=name id=name></td>
 	<td align=center>성별</td><td><input type="radio" name="gender" value="남성">남성
@@ -35,9 +35,10 @@
 		<input type=checkbox name=interest value='예술'>예술
 	</td>
 </tr>
-<tr><td colspan=5 align=center>
+<tr><td colspan=4 align=center>
 	<input type=submit id=done value="가입완료">&nbsp;&nbsp;
-	<input type=reset onclick="location.href='home.jsp'" id=cancel value="취소">
+	<input type=reset value="비우기">&nbsp;&nbsp;
+	<input type=button id=cancel value="취소">
 </td></tr>
 </table>
 </form>
@@ -45,6 +46,10 @@
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
 $(document)
+.on('click','#cancel',function() {
+	document.location="home.jsp";
+	return false;
+})
 .on('click','#done', function() {
 	if($('#name').val()=='') {
 		alert('이름을 입력하세요.');
@@ -75,11 +80,14 @@ $(document)
 		alert('성별을 입력하세요.');	
 		return false;
 	}
+// 	if($('input[name=gender]:checked').val()==undefined) {
+// 		alert('성별입력');
+// 		return false;
+// 	}
 	if($('input[name=interest]:checked').length==0) {
-		alert('관심분야를 체크하세요.');
+		alert('관심분야를 하나 이상 체크하세요.');
 		return false;
 	}
-
 })
 </script>
 </html>

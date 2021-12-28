@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원정보</title>
-</head>
-<body>
+
+<% request.setCharacterEncoding("UTF-8"); %>
 <%
+	String userid=request.getParameter("userid");
+	String passcode=request.getParameter("passcode");
+	application.setAttribute("userid",userid);
+	application.setAttribute("passcode",passcode);
+	//request.setAttribute("userid", userid);
+	//request.setAttribute("passcode",passcode);
 	request.getRequestDispatcher("login.jsp").forward(request,response);
 %>
 
