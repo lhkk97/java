@@ -3,14 +3,16 @@
 
 <% request.setCharacterEncoding("UTF-8"); %>
 <%
-	String userid=request.getParameter("userid");
-	String passcode=request.getParameter("passcode");
-	application.setAttribute("userid",userid);
-	application.setAttribute("passcode",passcode);
-	//request.setAttribute("userid", userid);
-	//request.setAttribute("passcode",passcode);
-	request.getRequestDispatcher("login.jsp").forward(request,response);
+ 	String userid=request.getParameter("userid");
+ 	String passcode=request.getParameter("passcode");
+ 	application.setAttribute("userid",userid);
+ 	application.setAttribute("passcode",passcode);
+	//request.getRequestDispatcher("login.jsp").forward(request,response);
 %>
+<jsp:forward page="login.jsp">
+	<jsp:param name="userid" value="<%=userid %>"/>
+	<jsp:param name="passcode" value="<%=passcode %>"/>
+</jsp:forward>
 
 <%-- <% request.setCharacterEncoding("UTF-8"); %> 
 실명:<%=request.getParameter("name") %><br> 
@@ -30,15 +32,3 @@
  // 		out.println(area+"<br>");
  // 	}
 %> --%>
-
-</body>
-<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
-<script>
-// $(document)
-// .ready(function() {
-// 	setTimeout(function() {
-// 		document.location='login.jsp';
-// 	},3000)
-// });
-</script>
-</html>
