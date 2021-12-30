@@ -6,22 +6,19 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 </head>
-<style>
-	table {border-collapse:collapse;}
-	td {border:1px solid skyblue;}
-</style>
+<link rel="stylesheet" href="member.css">
 <body>
 <jsp:include page="header.jsp"/>
 <form method=post action="login_check.jsp">
 <table align=center>
 <tr><td>아이디</td><td><input type=text name=userid id=userid></td><tr>
-<tr><td>비밀번호</td><td><input type=text name=passcode id=passcode></td></tr>
-<tr><td colspan=2 align=center>
+<tr><td>비밀번호</td><td><input type=password name=passcode id=passcode></td></tr>
+<tr><td colspan=2>
 	<input type=submit id=login value="로그인">&nbsp;
-	<input type=reset value="비우기">&nbsp;
-	<input type=button id=cancel value="취소">
+	<input type=reset id=reset1 value="비우기">&nbsp;
+	<input type=button id=cancel1 value="취소">
 </td></tr>
-<tr><td colspan=2 align=center><a href='register.jsp'>회원가입</a></td></tr>
+<tr><td colspan=2><a href='signon.jsp'>회원가입</a></td></tr>
 </table>
 </form>
 <jsp:include page="footer.jsp"/>
@@ -29,7 +26,7 @@
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
 $(document)
-.on('click','#cancel',function() {
+.on('click','#cancel1',function() {
 	document.location='home.jsp';
 	return false; 
 })
