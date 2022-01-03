@@ -12,16 +12,13 @@
 	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	String userid="ora_user";
 	String passcode="human";
-	String sql="select a.department_id,a.department_name,c.emp_name,b.parent_id"+
-			" from departments a, departments b, employees c "+
-			" where a.manager_id=c.employee_id(+) "+
-			" and a.department_id=b.department_id(+)";
+	String sql="select*from student";
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Employees</title>
+<title>Insert title here</title>
 </head>
 <style>
 table {border-collapse:collapse;}
@@ -29,24 +26,23 @@ td,th {border:1px solid blue;}
 </style>
 <body>
 <table>
-<tr><th>부서아이디</th><th>부서명</th><th>매니저</th><th>상위부서</th></tr>
+<tr><th>이름</th><th>수학</th><th>국어</th></tr>
 <%
-try {
+	try {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn=DriverManager.getConnection(url,userid,passcode);
 		stmt=conn.createStatement();
 		rs=stmt.executeQuery(sql);
+		
 		while(rs.next()) {
-			int did=rs.getInt("department_id");
- 			String dname=rs.getString("department_name");
- 			String mname=rs.getString("emp_name");
- 			int pid=rs.getInt("parent_id");
+ 			String name=rs.getString("name");
+ 			String math=rs.getString("math");
+ 			String korean=rs.getString("korean");
 %>
 			<tr>
-				<td><%=did%></td>
-				<td><%=dname%></td>
-				<td><%=mname%></td>
-				<td><%=pid%></td>
+				<td><%=name%></td>
+				<td><%=math%></td>
+				<td><%=korean%></td>
 			</tr>
 <%	
 		}
