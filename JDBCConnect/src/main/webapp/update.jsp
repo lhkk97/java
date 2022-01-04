@@ -10,28 +10,25 @@
 	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	String userid="ora_user";
 	String passcode="human";
-	String sql="insert into student values(?,?,?)";
+	String sql="update menu set name=?,price=? where name=?";
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+
 <%
+	String newname=request.getParameter("newname");
+	String name=request.getParameter("name");
+	String price=request.getParameter("price");
 	try {
-		if(request.getParameter("name")==null || request.getParameter("math")==null || request.getParameter("korean")==null) {
-			out.println("적절한 값이 주어지지 않았습니다.");
+		if(newname.equals(name)) {
+			out.println("메뉴명이 같습니다.");
 			return;
 		}
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn=DriverManager.getConnection(url,userid,passcode);
 		pstmt=conn.prepareStatement(sql);
 		
-		pstmt.setString(1,request.getParameter("name"));
-		pstmt.setInt(2,Integer.parseInt(request.getParameter("math")));
-		pstmt.setInt(3,Integer.parseInt(request.getParameter("korean")));
+		pstmt.setString(1,request.getParameter("newname"));
+		pstmt.setInt(2,Integer.parseInt(request.getParameter("price")));
+		pstmt.setString(3,request.getParameter("name"));
 		
 		pstmt.executeUpdate();
 	} catch(Exception e) {
@@ -39,8 +36,6 @@
 	} finally {
 		if(pstmt!=null) pstmt.close();
 		if(conn!=null) conn.close();
-		request.getRequestDispatcher("view_student.jsp").forward(request,response);
+		response.sendRedirect("controlmenu.jsp");
 	}
 %>
-</body>
-</html>
