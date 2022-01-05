@@ -9,7 +9,7 @@
 	
 	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	String userid="ora_user";
-	String passcode="human";
+	String passcode="human123";
 	String sql="delete from room where roomcode=?";
 %>
 

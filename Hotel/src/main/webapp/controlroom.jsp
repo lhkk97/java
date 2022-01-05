@@ -11,7 +11,7 @@
 	
 	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	String userid="ora_user";
-	String passcode="human";
+	String passcode="human123";
 	String sql="select roomcode,name,type,howmany,howmuch from room order by roomcode";
 %>
 <!DOCTYPE html>
@@ -23,9 +23,16 @@
 <style>
 table {border-collapse:collapse;}
 tr,td,th {border:1px solid blue;}
+.bound1 {
+	text-align:center;
+	
+}
+.bound1 tr {
+	background:linear-gradient(45deg,white,gray);
+}
 </style>
 <body>
-<table>
+<table class=bound1>
 <thead>
 	<tr><th>객실코드</th><th>객실명</th><th>객실타입</th><th>숙박가능인원</th><th>숙박비</th></tr>
 </thead>
@@ -57,7 +64,7 @@ try {
 </tbody>
 </table><br><br><br>
 <form method:"GET" action="" id=frmMenu>
-<table>
+<table class=bound2>
 <tr>
 	<td>객실코드 : <input type=number id=roomcode name=roomcode></td>
 </tr>
@@ -74,7 +81,7 @@ try {
 	<td>숙박비 : <input type=number id=howmuch name=howmuch></td>
 </tr>
 <tr>
-	<td><input type=submit value='전송'>&nbsp;
+	<td align=center><input type=submit value='전송'>&nbsp;
 	<input type=reset value='비우기'></td>
 </tr>
 </table>

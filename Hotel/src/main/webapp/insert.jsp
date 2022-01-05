@@ -9,7 +9,7 @@
 	
 	String url="jdbc:oracle:thin:@localhost:1521:orcl";
 	String userid="ora_user";
-	String passcode="human";
+	String passcode="human123";
 	String sql="insert into room values(seq_room.nextval,?,?,?,?)";
 %>
 
