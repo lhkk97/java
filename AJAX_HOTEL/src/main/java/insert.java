@@ -39,7 +39,7 @@ public class insert extends HttpServlet {
 		
 		String url="jdbc:oracle:thin:@localhost:1521:orcl";
 		String userid="ora_user";
-		String passcode="human123";
+		String passcode="human";
 		String sql="insert into room(roomcode,name,type,howmany,howmuch) "
 					+"values(seq_room.nextval,?,?,?,?)";
 		

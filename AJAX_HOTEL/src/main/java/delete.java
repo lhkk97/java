@@ -36,7 +36,7 @@ public class delete extends HttpServlet {
 		
 		String url="jdbc:oracle:thin:@localhost:1521:orcl";
 		String userid="ora_user";
-		String passcode="human123";
+		String passcode="human";
 		String sql="delete from room where roomcode=?";
 
 		String result_flag="";

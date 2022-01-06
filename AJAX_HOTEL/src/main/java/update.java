@@ -39,7 +39,7 @@ public class update extends HttpServlet {
 		
 		String url="jdbc:oracle:thin:@localhost:1521:orcl";
 		String userid="ora_user";
-		String passcode="human123";
+		String passcode="human";
 		String sql="update room set name=?,type=?,howmany=?,howmuch=? where roomcode=?";
 	
 		String result_flag="";

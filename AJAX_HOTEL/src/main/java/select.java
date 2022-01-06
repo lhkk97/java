@@ -43,7 +43,7 @@ public class select extends HttpServlet {
 		String strReturn="";
 		String url="jdbc:oracle:thin:@localhost:1521:orcl";
 		String userid="ora_user";
-		String passcode="human123";
+		String passcode="human";
 		String sql="select roomcode,name,type,howmany,howmuch from room order by roomcode";
 		
 		try {
