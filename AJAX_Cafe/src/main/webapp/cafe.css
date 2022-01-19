@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+h1 {
+	text-align:center;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-size:35px;
+/* 	background:#C4DEFF; */
+}
+
+table.bound1 {
+    border-collapse:collapse;
+    border:3px solid #C4DEFF;
+    width:320px; height:450px;
+    font-family: 'Gowun Dodum', sans-serif;
+    margin:20px 10px 80px 125px;
+    background:white;
+    text-align: center;
+}
+table.bound2 {
+    border-collapse:collapse;
+    border:3px solid #A0BAED;
+    width:320px; height:450px;
+    font-family: 'Gowun Dodum', sans-serif;
+    margin:20px 10px 80px 10px;
+    background:white;
+    text-align: center;
+}
+table.bound3 {
+    border-collapse:collapse;
+    border:3px solid #BFA0ED;
+    width:560px; height:450px;
+    font-family: 'Gowun Dodum', sans-serif;
+    margin:20px 0px 80px 10px;
+    background:white;
+    text-align: center;
+}
+table.bound5 {
+    font-family: 'Gowun Dodum', sans-serif;
+    margin:15px 0px 10px 10px;
+}
+caption {font-size: 30px;}
+.bound5 caption {font-size: 23px;}
+#selMenu,#selOrder {
+    width:290px; height:270px;
+	font-family: 'NanumGothicCodingLigature';
+    font-size: 17px;
+}
+#selMenu option {
+	padding:5px 30px;
+}
+#selOrder option {
+	padding:5px 13px;
+}
+#selMenu option:checked{background:#D4F4FA;}
+#selMenu1 {
+    width:260px; height:250px; 
+    font-family: 'NanumGothicCodingLigature';
+	margin:15px 10px;
+}
+#selSales {
+    width:530px; height:390px;
+    font-family: 'NanumGothicCodingLigature'; 
+    font-size: 17px;  
+}
+#selSales option {
+	padding:5px 13px;
+}
+#selSum {
+    width:280px; height:350px;
+    font-family: 'NanumGothicCodingLigature';
+    font-size: 17px;
+    background: linear-gradient(to bottom, #FFFFFF, #C4DEFF);
+    margin:10px auto 0px;
+}
+#selSum2 {
+    width:280px; height:350px;
+    font-family: 'NanumGothicCodingLigature';
+    font-size: 17px;
+    background: linear-gradient(to bottom, #FFFFFF, #D3DCFB);
+    margin:10px auto 0px;
+}
+#selSum option {
+	margin:0px 10px;
+}
+#selSum2 option {
+	margin:0px 40px;
+}
+#a {
+	text-align:right;
+}
+#menu_name,#qty,#menu_price,#total,#mobile {
+    width: 180px;
+    font-size: 15px;
+    font-family: 'NanumGothicCodingLigature';
+    text-align:right;
+}
+
+#btnReset, #btnAdd {
+    border: 1px solid #C4DEFF;
+    border-radius:5px;
+    background: #C4DEFF; 
+    width: 142px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+#btnMenu {
+    border: 1px solid #C4DEFF;
+    border-radius:5px;
+    background: #C4DEFF; 
+    width: 290px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+#btnCancel, #btnDone {
+    border: 1px solid #D3DCFB;
+    border-radius:5px;
+    background: #D3DCFB; 
+    width: 290px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+#btnSum {
+	border: 1px solid #D6C7ED;
+    border-radius:5px;
+    background: #D6C7ED;
+    width: 530px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+.bound4 {
+	font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+#code,#price {
+	width:160px;
+	font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+    text-align:right;
+}
+#name {
+	width:160px;
+	font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+    text-align:left;
+}
+
+
+#btnPlus,#btnD {
+	border: 1px solid #999999;
+    border-radius:5px;
+    background:#D9E5FF; 
+    width: 80px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+#btnQ {
+	border: 1px solid #999999;
+    border-radius:5px;
+    background:#D9E5FF; 
+    width: 30px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15px;
+}
+pre {
+	font-family: 'Gowun Dodum', sans-serif;
+	margin:45px 0px 0px 0px;
+}
