@@ -2,35 +2,37 @@
 
 h1 {
 	text-align:center;
-	font-family: 'Gowun Dodum', sans-serif;
-	font-size:35px;
-/* 	background:#C4DEFF; */
+/* 	background: linear-gradient(to bottom,#D9E5FF,#ffffff); */
+/* 	padding:10px 0px; */
+/* 	font-family: 'Gowun Dodum', sans-serif; */
+/* 	font-size:35px; */
+/* 	background:#D9E5FF; */
 }
 
 table.bound1 {
     border-collapse:collapse;
     border:3px solid #C4DEFF;
-    width:320px; height:450px;
+    width:325px; height:480px;
     font-family: 'Gowun Dodum', sans-serif;
-    margin:20px 10px 80px 125px;
+    margin:20px 10px 20px 100px;
     background:white;
     text-align: center;
 }
 table.bound2 {
     border-collapse:collapse;
     border:3px solid #A0BAED;
-    width:320px; height:450px;
+    width:325px; height:480px;
     font-family: 'Gowun Dodum', sans-serif;
-    margin:20px 10px 80px 10px;
+    margin:20px 10px 20px 10px;
     background:white;
     text-align: center;
 }
 table.bound3 {
     border-collapse:collapse;
-    border:3px solid #BFA0ED;
-    width:560px; height:450px;
+    border:3px solid #B6B5DB;
+    width:560px; height:480px;
     font-family: 'Gowun Dodum', sans-serif;
-    margin:20px 0px 80px 10px;
+    margin:20px 100px 20px 10px;
     background:white;
     text-align: center;
 }
@@ -52,13 +54,19 @@ caption {font-size: 30px;}
 	padding:5px 13px;
 }
 #selMenu option:checked{background:#D4F4FA;}
+#selMenu1 option:checked{background:#D9E5FF;}
+#selOrder option:checked{background:#D3DCFB;}
+#selSales option:checked{background:#DAD9FF;}
 #selMenu1 {
     width:260px; height:250px; 
     font-family: 'NanumGothicCodingLigature';
 	margin:15px 10px;
 }
+#selMenu1 option {
+	padding:5px 0px;
+}
 #selSales {
-    width:530px; height:390px;
+    width:530px; height:400px;
     font-family: 'NanumGothicCodingLigature'; 
     font-size: 17px;  
 }
@@ -80,10 +88,10 @@ caption {font-size: 30px;}
     margin:10px auto 0px;
 }
 #selSum option {
-	margin:0px 10px;
+	padding:5px 13px;
 }
 #selSum2 option {
-	margin:0px 40px;
+	padding:5px 45px;
 }
 #a {
 	text-align:right;
@@ -120,30 +128,39 @@ caption {font-size: 30px;}
     font-size: 15px;
 }
 #btnSum {
-	border: 1px solid #D6C7ED;
+	border: 1px solid #DAD9FF;
     border-radius:5px;
-    background: #D6C7ED;
+    background: #DAD9FF;
     width: 530px;
     font-family: 'Gowun Dodum', sans-serif;
     font-size: 15px;
+}
+#btnReset:hover,#btnAdd:hover,#btnMenu:hover {
+	border:1px solid #346D76;
+	background:#346D76;
+	color:white;
+}
+
+#btnCancel:hover, #btnDone:hover {
+	border:1px solid #466093;
+	background:#466093;
+	color:white;
+}
+#btnSum:hover {
+	border:1px solid #6E6D93;
+	background:#6E6D93;
+	color:white;
 }
 .bound4 {
 	font-family: 'Gowun Dodum', sans-serif;
     font-size: 15px;
 }
-#code,#price {
+#code,#price,#name {
 	width:160px;
 	font-family: 'Gowun Dodum', sans-serif;
     font-size: 15px;
     text-align:right;
 }
-#name {
-	width:160px;
-	font-family: 'Gowun Dodum', sans-serif;
-    font-size: 15px;
-    text-align:left;
-}
-
 
 #btnPlus,#btnD {
 	border: 1px solid #999999;

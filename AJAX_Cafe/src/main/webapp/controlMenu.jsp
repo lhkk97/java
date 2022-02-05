@@ -14,15 +14,15 @@
 <title>CAFE</title>
 </head>
 <body>
-<h1>Cafe</h1>
-<hr>
-<table>
+<h1>101 Cafe</h1><hr>
+<table align=center>
 <tr>
 	<td>
 	<table class='bound1'>
 		<caption>메뉴목록</caption>
+		<tr style='height:15px;'><td></td></tr>
 		<tr>
-			<td colspan=2><select id=selMenu size=12></select></td>
+			<td colspan=2 valign=top><select id=selMenu size=12></select></td>
 		</tr>
 		<tr>
 			<td id=a>&nbsp;메뉴명</td>
@@ -36,6 +36,7 @@
 			<td id=a>&nbsp;총액</td>
 			<td><input type=number id=menu_price readonly> 원</td>
 		</tr>
+		<tr style='height:15px;'><td></td></tr>
 		<tr>
 			<td colspan=2><button id=btnReset>취소</button>
 			<button id=btnAdd>주문</button></td>
@@ -45,12 +46,14 @@
 				<button id=btnMenu>메뉴관리</button>
 			</td>
 		</tr>
+		<tr style='height:15px;'><td></td></tr>
 	</table>
 	</td><td>
 	<table class='bound2'>
 		<caption>주문목록</caption>
+		<tr style='height:15px;'><td></td></tr>
     	<tr>
-    		<td colspan=2><select id=selOrder size=12></select></td>
+    		<td colspan=2 valign=top><select id=selOrder size=12></select></td>
    		</tr>
     	<tr>
        		<td id=a>&nbsp;총액</td>
@@ -69,12 +72,14 @@
     	<tr>
         	<td colspan=2><button id=btnCancel>주문취소</button></td>
     	</tr>
+    	<tr style='height:15px;'><td></td></tr>
 	</table>
 	</td><td>
 	<table class='bound3'>
 		<caption>판매내역</caption>
+		<tr style='height:15px;'><td></td></tr>
 		<tr>
-			<td align=center class='bound'>
+			<td align=center class='bound' valign=top>
             <select id=selSales size=20></select>
         </td></tr>
         <tr>
@@ -82,6 +87,7 @@
 				<button id=btnSum>summary</button>
 			</td>
 		</tr>
+		<tr style='height:15px;'><td></td></tr>
     </table>
     </td>
 </tr></table>
@@ -225,7 +231,7 @@ $(document)
 	$('#selOrder option').remove();
 })
 
-// 판매내역-------
+// 판매내역
 .on('click','#btnDone', function() {
  	$('#selOrder option').each(function() {
  		str=$(this).text().replace('x','');
@@ -243,16 +249,17 @@ $(document)
 		} 
  		operateSale();
 	});
- 	selectSale();
+  	selectSale();
 
 	$('#mobile,#total').val('');
 	$('#selOrder option').remove();
 	total=0;
 })
 
-// summary*******
+// summary
 .on('click','#btnSum', function() {
 	$('#dlgSum').dialog({
+		modal:true,
 	    width:640,height:500,
 	    open:function(){
 	    	$.get('sum_menu',{},function(txt){
@@ -286,6 +293,7 @@ $(document)
 // 메뉴목록 관련 함수
 function selectMenu() {
 	$('#dlgMenu').dialog({
+		modal:true,
 	    width:650,height:350,
 	    open:function(){
 	    	loadMenu_dlg();
@@ -334,7 +342,7 @@ function operateMenu() {
 }
 // 판매 관련 함수
 function selectSale() {
-	$('#selSales').empty();
+	$('#selSales option').remove();
 	$.get('sale_select',{},function(txt){
  		if(txt=='') return false;
 		let rec=txt.split(';');
