@@ -40,7 +40,8 @@
 		</tr>
 		<tr><td colspan=2 align=center>
 			<input type=submit value='추가'>
-			<input type=button id=Delete value='삭제'></td>
+			<input type=button id=Delete value='삭제'>
+			<input type=reset value="비우기"></td>
 		</tr>
 		</table>
 	</form>
@@ -69,7 +70,6 @@ $(document)
 			return false;
 		}
 	})
-	
 	return false;
 })
 

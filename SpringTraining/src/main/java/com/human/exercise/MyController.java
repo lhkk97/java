@@ -35,7 +35,7 @@ public class MyController {
 	@RequestMapping(value="/addRoom")
 	public String addRoom(HttpServletRequest hsr,Model m) {
 		String roomname=hsr.getParameter("roomname");
-		int roomtype=Integer.parseInt(hsr.getParameter("roomtype"));
+		String roomtype=hsr.getParameter("roomtype");
 		int howmany=Integer.parseInt(hsr.getParameter("howmany"));
 		int howmuch=Integer.parseInt(hsr.getParameter("howmuch"));
 		

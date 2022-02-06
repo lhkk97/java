@@ -13,7 +13,7 @@ public interface iEmp {
 	
 	ArrayList<Room> getRoomList();
 	ArrayList<RoomType> getTypeList();
-	void addRoom(String name,int type,int howmany,int howmuch);
+	void addRoom(String name,String type,int howmany,int howmuch);
 	void addType(int typecode, String typename);
 	void deleteRoom(int roomcode);
 }
