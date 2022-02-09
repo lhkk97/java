@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.human.exercise.iJob">
+<select id="jobList" resultType="com.human.exercise.Job">
+	select job_id,job_title from jobs order by job_title
+</select>
+<select id="getList" resultType="com.human.exercise.EmpInfo">
+	select a.employee_id as eid,a.emp_name as ename,
+			a.phone_number as mobile,b.department_name as dname
+	  from employees a, departments b
+	 where a.job_id=#{param1} and a.department_id=b.department_id
+</select>
+
+<select id="deptList" resultType="com.human.exercise.Dept">
+	select department_id as d_id,department_name as dname 
+	from departments order by department_id
+</select>
+<select id="getDept" resultType="com.human.exercise.Employee">
+	select employee_id,emp_name,phone_number,salary
+	  from employees
+	 where department_id=#{param1}
+</select>
+
+<select id="getMList" resultType="com.human.exercise.emp">
+	select a.manager_id,b.emp_name
+	from employees a, employees b
+	where a.employee_id=b.manager_id
+</select>
+</mapper>

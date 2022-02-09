@@ -17,6 +17,18 @@
 	order by a.department_id
 </select>
 
+<select id="getEmp" resultType="com.human.exercise.emp">
+	select employee_id,emp_name,phone_number,manager_id,hire_date
+	from employees
+	order by employee_id
+</select>
+
+<select id="getEmpShow" resultType="com.human.exercise.emp">
+	select employee_id,emp_name,phone_number,manager_id,hire_date
+	from employees
+	where employee_id=#{param1}
+	order by employee_id
+</select>
 <!-- 메뉴관리 -->
 <select id="getMenu" resultType="com.human.exercise.Menu">
 	select code,name,price from menu
@@ -52,4 +64,9 @@
 <delete id="deleteRoom">
 	delete from room where roomcode=#{param1}
 </delete>
+<update id="updateRoom">
+	update room
+	set name=#{param2},type=#{param3},howmany=#{param4},howmuch=#{param5}
+	where roomcode=#{param1}
+</update>
 </mapper>

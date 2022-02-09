@@ -12,9 +12,9 @@
 <tr>
 <td>
 	<select id=selMenu style="width:250px" size=10>
-	<c:forEach items="${alMenu}" var="m" varStatus="status">
-		<option value='${m.code}'>${status.count} ${m.name} ${m.price}</option>
-	</c:forEach>	
+<%-- 	<c:forEach items="${alMenu}" var="m" varStatus="status"> --%>
+<%-- 		<option value='${m.code}'>${status.count} ${m.name} ${m.price}</option> --%>
+<%-- 	</c:forEach>	 --%>
 	</select>
 </td>
 <td>
@@ -41,14 +41,26 @@
 <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
 $(document)
-.on('sumit','#frmAddMenu',function() {
-	if($('input[name=menu_name]').val()=='' ||
-			$('input[name=price]').val()=='') {
-		alert('두 값이 입력되어야 합니다.');
-		return false;
-	}
-	return true;
-})	
+.ready(function() { // just after webpage is loaded
+	$.ajax({url:"/exercise/menuList",data:{},datatype:"json",
+			method:"GET",
+			success:function(txt) {
+				for(i=0;i<txt.length;i++) {
+					let str='<option value='+txt[i]['code']+'>'+txt[i]['name']+','+txt[i]['price']+'</option>';
+					console.log(str);
+					$('#selMenu').append(str);
+				}
+			}
+	});
+})
+// .on('sumit','#frmAddMenu',function() {
+// 	if($('input[name=menu_name]').val()=='' ||
+// 			$('input[name=price]').val()=='') {
+// 		alert('두 값이 입력되어야 합니다.');
+// 		return false;
+// 	}
+// 	return true;
+// })	
 .on('click','#selMenu option',function() {
 	console.log($(this).val()+','+$(this).text());
 	$('#code').val($(this).val());

@@ -12,9 +12,9 @@
 <tr>
 <td>
 	<select id=selRoom style="width:250px" size=10>
-	<c:forEach items="${alRoom}" var="r" varStatus="status">
-		<option value='${r.roomcode}'>${status.count} ${r.name} ${r.type} ${r.howmany} ${r.howmuch}</option>
-	</c:forEach>	
+<%-- 	<c:forEach items="${alRoom}" var="r" varStatus="status"> --%>
+<%-- 		<option value='${r.roomcode}'>${status.count} ${r.name} ${r.type} ${r.howmany} ${r.howmuch}</option> --%>
+<%-- 	</c:forEach>	 --%>
 	</select>
 </td>
 <td>
@@ -26,10 +26,9 @@
 		</tr>
 			<tr><td>타입: </td>
 			<td><select id=roomtype name=roomtype>
-				<option value=''>-</option>
-			<c:forEach items="${alType}" var="t" varStatus="status">
-				<option value='${t.typecode}'>${t.typename}</option>
-			</c:forEach>	
+<%-- 			<c:forEach items="${alType}" var="t" varStatus="status"> --%>
+<%-- 				<option value='${t.typecode}'>${t.typename}</option> --%>
+<%-- 			</c:forEach>	 --%>
 			</select></td>
 		</tr>
 		<tr><td>숙박가능인원: </td>
@@ -52,6 +51,33 @@
 <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
 $(document)
+.ready(function() {
+	$.ajax({url:'/exercise/roomlist',data:{},method:'GET',datatype:'json',
+		beforeSend:function() {
+			alert('ajax called');
+		},
+		success:function(txt) {
+			console.log(txt);
+			for(i=0;i<txt.length;i++) {
+				let str='<option value='+txt[i]['roomcode']+'>'+txt[i]['name']+','+txt[i]['type']+','
+						+txt[i]['howmany']+','+txt[i]['howmuch']+'</option>';
+				$('#selRoom').append(str);
+			}
+			
+		}
+	});
+	
+		$.ajax({url:'/exercise/typelist',data:{},method:'GET',datatype:'json',
+		success:function(txt) {
+			console.log(txt);
+			for(i=0;i<txt.length;i++) {
+				let str='<option value='+txt[i]['typecode']+'>'+txt[i]['typename']+'</option>';
+				$('#roomtype').append(str);
+			}
+		}
+	});
+})
+
 .on('click','#selRoom option',function() {
 	console.log($(this).val()+','+$(this).text());
 	$('#roomcode').val($(this).val());
